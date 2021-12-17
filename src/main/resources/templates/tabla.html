@@ -26,7 +26,7 @@
 			<th>Salario</th>
 			<th>Fecha</th>
 			<th>Destacado</th>
-			<th>Detalle</th>
+			<th>Acciones</th>
 
 		</tr>
 		<tr th:each="vacante: ${vacantes}">
@@ -46,6 +46,7 @@
 			</td>
 			<td>
 			<a th:href="@{/vacantes/view/{id} (id=${vacante.id}) }" class="btn btn-success">detalle</a>
+			<a th:href="@{/vacantes/delete?id={id} (id=${vacante.id}) }" class="btn btn-danger">eliminar</a>
 			</td>
 		</tr>
 	</table>
