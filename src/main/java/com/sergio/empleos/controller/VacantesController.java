@@ -28,13 +28,8 @@ public class VacantesController {
 
 		@GetMapping("/view/{id}")
 		public String verDetalle(@PathVariable("id") int idVacante, Model model) {
-			
 			Vacante vacante = serviceVacantes.buscarPorId(idVacante);
-			
-			
 			model.addAttribute("vacante", vacante);
-			
-			
 			//buscar el detalle en la bd
 			return "detalle";
 		}
