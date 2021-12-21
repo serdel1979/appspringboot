@@ -9,6 +9,17 @@ public class Vacante {
 	private String descripcion;
 	private Date fecha;
 	private Double salario;
+	private String estatus;
+	public String getEstatus() {
+		return estatus;
+	}
+
+
+	public void setEstatus(String estatus) {
+		this.estatus = estatus;
+	}
+
+
 	private Integer destacado;
 	private String imagen="no-imagen-png";
 
@@ -79,8 +90,12 @@ public class Vacante {
 	@Override
 	public String toString() {
 		return "Vacante [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", fecha=" + fecha
-				+ ", salario=" + salario + "]";
+				+ ", salario=" + salario + ", estatus=" + estatus + ", destacado=" + destacado + ", imagen=" + imagen
+				+ "]";
 	}
+
+
+	
 	
 	
 }
