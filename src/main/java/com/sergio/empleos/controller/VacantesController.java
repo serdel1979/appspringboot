@@ -2,6 +2,7 @@ package com.sergio.empleos.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -38,11 +39,12 @@ public class VacantesController {
 	}
 
 	@PostMapping("/guardar")
-	public String guardar(Vacante vacante) {
-
+	public String guardar(Vacante vacante, Model model) {
+		List<Vacante> lista = null;
 		//System.out.println("Datos recibidos " + vacante.toString());
 		this.serviceVacantes.guardar(vacante);
-
+		lista = this.serviceVacantes.buscarTodos();
+		model.addAttribute("vacantes", lista);
 		return "vacantes/listaVacantes";
 	}
 
