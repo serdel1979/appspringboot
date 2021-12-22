@@ -85,6 +85,7 @@ public class VacanteServiceImpl implements IVacanteService {
 
 	@Override
 	public void guardar(Vacante vacante) {
+		vacante.setId(this.lista.size()+1);
 		lista.add(vacante);		
 	}
 
